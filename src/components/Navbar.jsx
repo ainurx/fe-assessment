@@ -17,8 +17,6 @@ const Navbar = () =>{
             }}>
             <p className='is-size-3 has-text-weight-semibold has-text-centered has-text-white'>D</p>
           </div>
-          {/* <div className='box is-danger'>
-          </div> */}
         </div>
 
         <div role="button" onClick={()=> setIsOpen(!isOpen)} className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">

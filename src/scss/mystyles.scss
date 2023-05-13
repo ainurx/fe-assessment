@@ -1,0 +1,62 @@
+@charset "utf-8";
+
+@import "../../node_modules/bulma/sass/utilities/initial-variables";
+@import "../../node_modules/bulma/sass/utilities/functions";
+
+// Import a Google Font
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Source+Sans+Pro&display=swap');
+
+$background: #E4E6EC;
+$primaryLink: #F86E21; 
+$linkColor: #19A9BC;
+$bgTransparent: transparent;
+$shadow: none;
+$size-1: 5rem;
+$weight-bold: 800;
+@import '../../node_modules/bulma/sass/utilities/derived-variables.sass';
+
+$family-primary: 'Source Sans Pro';
+$family-secondary: 'Montserrat';
+$navbar-item-color: $linkColor;
+
+$scheme-main: $background;
+
+$navbar-item-hover-color: $primaryLink;
+$navbar-item-active-color: $primaryLink;
+
+.navbar-item{
+  &.is-active{
+    background-color: transparent !important;
+    text-decoration: underline;
+    text-underline-offset: 8px;
+    text-decoration-thickness: 2px;
+  } 
+}
+
+.transform-card { transition: all .2s ease-in-out; }
+.transform-card:hover { transform: scale(1.1); }
+
+.skeleton{
+  background-color: #E2E2E2;
+  animation: loading .5s infinite alternate;
+}
+
+@keyframes loading{
+  from{
+    background-color: #B3B3B3;
+  }
+  to{
+    background-color: hsl(0, 5%, 75%)
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .container{
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+@import "../../node_modules/bulma/bulma.sass";

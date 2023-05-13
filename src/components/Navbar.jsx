@@ -1,63 +1,53 @@
-import React from 'react'
+import React, { useState } from 'react'
+
+import { Link } from 'react-router-dom'
 
 const Navbar = () =>{
+  const [ isOpen, setIsOpen] = useState(false)
+
   return(
-    <nav class="navbar" role="navigation" aria-label="main navigation">
+    <nav class="navbar is-transparent pt-4" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
-        <a class="navbar-item" href="https://bulma.io">
-          <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28"/>
-        </a>
 
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
-
-      <div id="navbarBasicExample" class="navbar-menu">
-        <div class="navbar-start">
-          <a class="navbar-item">
-            Home
-          </a>
-
-          <a class="navbar-item">
-            Documentation
-          </a>
-
-          <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">
-              More
-            </a>
-
-            <div class="navbar-dropdown">
-              <a class="navbar-item">
-                About
-              </a>
-              <a class="navbar-item">
-                Jobs
-              </a>
-              <a class="navbar-item">
-                Contact
-              </a>
-              <hr class="navbar-divider" />
-              <a class="navbar-item">
-                Report an issue
-              </a>
-            </div>
+        {/* <figure class="image is-64x64">
+          <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png"/>
+        </figure> */}
+        <div className='navbar-item is-rounded'>
+          <div style={{ width: '50px', height: '50px', borderRadius: '50%', backgroundColor: 'red'}}>
+            <p className='is-size-3 has-text-weight-medium has-text-centered has-text-white'>D</p>
           </div>
+          {/* <div className='box is-danger'>
+          </div> */}
         </div>
 
+        <div role="button" onClick={()=> setIsOpen(!isOpen)} class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </div>
+      </div>
+
+      <div id="navbarBasicExample" class={`navbar-menu ${isOpen ? 'is-active' : ''}`}>
         <div class="navbar-end">
           <div class="navbar-item">
-            <div class="buttons">
-              <a class="button is-primary">
-                <strong>Sign up</strong>
-              </a>
-              <a class="button is-light">
-                Log in
-              </a>
-            </div>
+            <Link to="#" className="navbar-item">
+              HOME
+            </Link>
+            <Link to="#" className="navbar-item is-active">
+              BLOG
+            </Link>
+            <Link to="#" className="navbar-item">
+              BOOKMARKS
+            </Link>
+            <Link to="#" className="navbar-item">
+              ELEMENTS
+            </Link>
+            <Link to="#" className="navbar-item">
+              PLAYLISTS
+            </Link>
+            <Link to="#" className="navbar-item">
+              BOOKS
+            </Link>
           </div>
         </div>
       </div>

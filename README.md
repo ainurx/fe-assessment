@@ -7,5 +7,5 @@ Requirement:
 - node-sass 7.0.3
 
 Setup project: 
-run "npm install" to install required dependencies
-run "npm start" to start project 
+- run "npm install" to install required dependencies
+- run "npm start" to start project 
